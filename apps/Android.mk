@@ -81,18 +81,6 @@ include $(BUILD_PREBUILT)
 ###############################################################################
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := GoogleLoginService
-LOCAL_MODULE_TAGS := optional
-LOCAL_SRC_FILES := $(LOCAL_MODULE).apk
-LOCAL_MODULE_CLASS := APPS
-LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_CERTIFICATE := PRESIGNED
-
-include $(BUILD_PREBUILT)
-
-###############################################################################
-include $(CLEAR_VARS)
-
 LOCAL_MODULE := GooglePartnerSetup
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := $(LOCAL_MODULE).apk
@@ -225,17 +213,6 @@ LOCAL_REQUIRED_MODULES := libtalk_jni
 
 include $(BUILD_PREBUILT)
 
-###############################################################################
-include $(CLEAR_VARS)
-
-LOCAL_MODULE := Phonesky
-LOCAL_MODULE_TAGS := optional
-LOCAL_SRC_FILES := $(LOCAL_MODULE).apk
-LOCAL_MODULE_CLASS := APPS
-LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_CERTIFICATE := PRESIGNED
-
-include $(BUILD_PREBUILT)
 
 ###############################################################################
 include $(CLEAR_VARS)
@@ -266,20 +243,6 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := MarketUpdater
-LOCAL_MODULE_TAGS := optional
-LOCAL_SRC_FILES := $(LOCAL_MODULE).apk
-LOCAL_MODULE_CLASS := APPS
-LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_CERTIFICATE := PRESIGNED
-
-include $(BUILD_PREBUILT)
-
-# This binary is required for any Google application to work
-# It MUST be installed on all devices
-###############################################################################
-include $(CLEAR_VARS)
-
-LOCAL_MODULE := GoogleServicesFramework
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := $(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
@@ -376,9 +339,11 @@ include $(BUILD_PREBUILT)
 ###############################################################################
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := OneTimeInitializer
+LOCAL_MODULE := OneTimeInitializerGoogle
+LOCAL_MODULE_STEM := OneTimeInitializer
+LOCAL_OVERRIDES_PACKAGES := OneTimeInitializer
 LOCAL_MODULE_TAGS := optional
-LOCAL_SRC_FILES := $(LOCAL_MODULE).apk
+LOCAL_SRC_FILES := OneTimeInitializer.apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
 LOCAL_CERTIFICATE := PRESIGNED
